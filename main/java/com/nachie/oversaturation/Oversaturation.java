@@ -23,10 +23,6 @@ public class Oversaturation
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        if (Loader.isModLoaded("AppleCore")) {
-            APPLECORE = true;
-        }else{
-            APPLECORE = false;
-        }
+
     }
 }
