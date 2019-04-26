@@ -12,16 +12,9 @@ public class Oversaturation {
 
     public static final String MODID = "oversaturation";
 
-    private static boolean appleCoreInstalled = false;
-
-    public static boolean isAppleCoreInstalled() {
-        return appleCoreInstalled;
-    }
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        appleCoreInstalled = Loader.isModLoaded("applecore");
-        if (appleCoreInstalled)
+        if (Loader.isModLoaded("applecore"))
             MinecraftForge.EVENT_BUS.register(new AppleCoreEventHandler());
         else
             MinecraftForge.EVENT_BUS.register(new VanillaEventHandler());
