@@ -6,23 +6,18 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Oversaturation.MODID, name = Oversaturation.NAME, version = Oversaturation.VERSION)
-public class Oversaturation
-{
-    public static boolean APPLECORE;
-    public static final String MODID = "oversaturation";
-    public static final String NAME = "Oversaturation";
-    public static final String VERSION = "1.0";
+@Mod(modid = Reference.MODID, name = "Oversaturation", version = Reference.VERSION)
+public class Oversaturation {
 
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    private static boolean appleCoreInstalled = false;
 
+    public static boolean isAppleCoreInstalled() {
+        return appleCoreInstalled;
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-
+    public void preInit(FMLPreInitializationEvent event) {
+        appleCoreInstalled = Loader.isModLoaded("applecore");
     }
+
 }

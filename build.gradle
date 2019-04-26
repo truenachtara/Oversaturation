@@ -33,6 +33,13 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+repositories {
+    maven {
+        name = "AppleCore Maven"
+        url = "http://www.ryanliptak.com/maven/"
+    }
+}
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
@@ -55,6 +62,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    deobfCompile 'applecore:AppleCore:1.12.2-3.2.0:api'
 }
 
 processResources {
@@ -62,9 +70,10 @@ processResources {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
-    // replace stuff in mcmod.info, nothing else
+    // replace stuff in mcmod.info and the Reference class, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
+        include 'Reference.java'
                 
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
@@ -73,5 +82,6 @@ processResources {
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+        exclude 'Reference.java'
     }
 }
