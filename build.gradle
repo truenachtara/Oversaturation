@@ -63,7 +63,8 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     deobfCompile 'applecore:AppleCore:1.12.2-3.2.0:api'
-    deobfProvided 'applecore:AppleCore:1.12.2-3.2.0:deobf'
+    // Uncomment the following line to test AppleCore compat
+    //deobfProvided 'applecore:AppleCore:1.12.2-3.2.0:deobf'
 }
 
 processResources {
