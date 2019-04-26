@@ -1,6 +1,6 @@
 package com.nachie.oversaturation;
 
-public class VanillaFoodStats extends net.minecraft.util.FoodStats {
+public class UncappedFoodStats extends net.minecraft.util.FoodStats {
 
     @Override
     public void addStats(int foodLevelIn, float foodSaturationModifier)

@@ -63,6 +63,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
     deobfCompile 'applecore:AppleCore:1.12.2-3.2.0:api'
+    deobfProvided 'applecore:AppleCore:1.12.2-3.2.0:deobf'
 }
 
 processResources {
@@ -70,10 +71,9 @@ processResources {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
-    // replace stuff in mcmod.info and the Reference class, nothing else
+    // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-        include 'Reference.java'
                 
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
@@ -82,6 +82,5 @@ processResources {
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
-        exclude 'Reference.java'
     }
 }
