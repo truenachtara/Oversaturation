@@ -1,0 +1,16 @@
+[
+{
+  "modid": "oversaturation",
+  "name": "Oversaturation",
+  "description": "Stuff yourself! Removes the saturation cap, allowing full gluttony.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["cubeman12345"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
